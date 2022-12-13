@@ -18,6 +18,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="file_lecturer.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="data.txt">
@@ -29,6 +32,9 @@
       <Filter>Исходные файлы</Filter>
     </ClInclude>
     <ClInclude Include="constants.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="file_lecturer.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>
