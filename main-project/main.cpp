@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -17,16 +18,35 @@ int main()
     try
     {
         lect("data.txt", Confirence, size);
+        cout << "***** Программа конференций *****\n\n";
         for (int i = 0; i < size; i++)
         {
-            cout << Confirence[i]->lecturer.last_name << '\n';
-            cout << Confirence[i]->lecturer.first_name << '\n';
-            cout << Confirence[i]->lecturer.middle_name << '\n';
-            cout << Confirence[i]->finish.hour << ' ';
-            cout << Confirence[i]->finish.minutes << '\n';
-            cout << Confirence[i]->start.hour << ' ';
-            cout << Confirence[i]->start.minutes << '\n';
-            cout << Confirence[i]->title << '\n';
+            /********** вывод лектора **********/
+            cout << "Лектор........: ";
+            // вывод фамилии
+            cout << Confirence[i]->lecturer.last_name << " ";
+            // вывод первой буквы имени
+            cout << Confirence[i]->lecturer.first_name << ". ";
+            // вывод первой буквы отчества
+            cout << Confirence[i]->lecturer.middle_name << ".";
+            cout << '\n';
+            /********** вывод конца доклада **********/
+            // вывод часа
+            cout << "Дата конца доклада...: ";
+            cout << setw(4) << setfill('0') << Confirence[i]->finish.hour << ':';
+            // вывод минут
+            cout << setw(2) << setfill('0') << Confirence[i]->finish.minutes;
+            cout << '\n';
+            /********** вывод начала доклада **********/
+            // вывод часа
+            cout << "Время начала доклада.....: ";
+            cout << setw(4) << setfill('0') << Confirence[i]->start.hour << ':';
+            // вывод минут
+            cout << setw(2) << setfill('0') << Confirence[i]->start.minutes;
+            cout << '\n';
+            /********** вывод темы доклада **********/
+            cout << "Тема доклада...........: ";
+            cout << '"' << Confirence[i]->title << '"';
             cout << '\n';
         }
         for (int i = 0; i < size; i++)
