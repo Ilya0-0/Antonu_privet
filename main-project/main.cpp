@@ -13,6 +13,7 @@ int main()
     cout << "Лабораторная работа №9. GIT\n";
     cout << "Вариант №2. Программа конференций\n";
     cout << "Автор: Илья Бутов\n\n";
+    cout << "Группа: XII\n";
     Confirence_program* Confirence[MAX_FILE_ROWS_COUNT];
     int size;
     try
@@ -58,5 +59,9 @@ int main()
     {
         cout << error << '\n';
     }
+    cout << "Laboratory work #9. GIT\n";
+    cout << "Variant #1. Conference program\n";
+    cout << "Author: Ilya Butov\n";
+    cout << "Group: XII\n";
     return 0;
 }
