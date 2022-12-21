@@ -1,57 +1,15 @@
 #pragma once
 #ifndef FILTER_H
 #define FILTER_H
-
 #include "Confirence_program.h"
-
 Confirence_program** filter(Confirence_program* array[], int size, bool (*check)(Confirence_program* element), int& result_size);
-
-/*
-ОПИСАНИЕ ФУНКЦИИ <function_name>:
-    функция перебирает массив с исходными данными и все указатели на элементы,
-    для которых функция отбора возвращает значение true, помещаются в новый
-    массив, указатель на который возвращается функцией
-
-ПАРАМЕТРЫ:
-    array       - массив с исходными данными
-    size        - размер массива с исходными данными
-    check       - указатель на функцию отбора.
-                  В качестве значения этого параметра можно передать имя
-                  функции отбора, прототип которой приведён ниже
-    result_data - параметр, передаваемый по ссылке - переменная, в которую
-                  функция запишет размер результирующего массива
-
-ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ
-    указатель на массив из указателей на элементы, удовлетворяющие условию
-    отбора (для которых функция отбора возвращает true)
-*/
-
-
 bool check_Confirence_program_by_author(Confirence_program* element);
-
-/*
-ОПИСАНИЕ ФУНКЦИИ check_book_subscription_by_author:
-    функция отбора - проверяет, является ли Пушкин Александр Сергеевич автором книги в записи на абонементе
-
-ПАРАМЕТРЫ:
-    element - указатель на элемент, который нужно проверить
-
-ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ
-    true, если Пушкин Александр Сергеевич является автором книги в записи на абонементе, и false в ином случае
-*/
-
-
 bool check_Confirence_program_by_date(Confirence_program* element);
-
-/*
-ОПИСАНИЕ ФУНКЦИИ check_book_subscription_by_date:
-    функция отбора - проверяет, взята ли книга из текущей записи на абонементе в марте 2021-го года
-
-ПАРАМЕТРЫ:
-    element - указатель на элемент, который нужно проверить
-
-ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ
-    true, если книга из текущей записи на абонементе взята в марте 2021-го года, и false в ином случае
-*/
-
+void sD(Confirence_program** report, int root, int bottom);
+void heapSort(Confirence_program** report, int size);
+void merge(Confirence_program** report, int size);
+void sD_str(Confirence_program** report, int root, int bottom);
+void heapSort_str(Confirence_program** report, int size);
+void merge_str(Confirence_program** report, int size);
+void title_sort(Confirence_program** report, int size);
 #endif

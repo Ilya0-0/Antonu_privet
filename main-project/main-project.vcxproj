@@ -130,6 +130,7 @@
     <ClCompile Include="file_lecturer.cpp" />
     <ClCompile Include="filter.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="sortirovka.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="data.txt" />
@@ -137,6 +138,7 @@
   <ItemGroup>
     <ClInclude Include="Confirence_program.h" />
     <ClInclude Include="constants.h" />
+    <ClInclude Include="sortirovka.h" />
     <ClInclude Include="file_lecturer.h" />
     <ClInclude Include="filter.h" />
   </ItemGroup>

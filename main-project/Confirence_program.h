@@ -23,6 +23,7 @@ struct Confirence_program
     date start;
     date finish;
     char title[MAX_STRING_SIZE];
+    int length;
 };
 
 #endif

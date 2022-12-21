@@ -1,8 +1,9 @@
 #include "file_lecturer.h"
 #include "constants.h"
-
+#include "Confirence_program.h"
 #include <fstream>
 #include <cstring>
+#include <iostream>
 
 date convert(char* str)
 {
@@ -26,15 +27,16 @@ void lect(const char* file_name, Confirence_program* array[], int& size)
         while (!file.eof())
         {
             Confirence_program* item = new Confirence_program;
+            file >> tmp_buffer;
+            item->start = convert(tmp_buffer);
+            file >> tmp_buffer;
+            item->finish = convert(tmp_buffer);
             file >> item->lecturer.last_name;
             file >> item->lecturer.first_name;
             file >> item->lecturer.middle_name;
-            file >> tmp_buffer;
-            item->start = convert(tmp_buffer); 
-            file >> tmp_buffer;
-            item->finish = convert(tmp_buffer);
             file.read(tmp_buffer, 1); // чтения лишнего символа пробела
             file.getline(item->title, MAX_STRING_SIZE);
+            item->length = Confirence_program_time(item);
             array[size++] = item;
         }
         file.close();
@@ -43,4 +45,17 @@ void lect(const char* file_name, Confirence_program* array[], int& size)
     {
         throw "Ошибка открытия файла";
     }
+}
+
+int Confirence_program_time(Confirence_program* element)
+{
+    int hours, minute;
+    hours = element->finish.hour - element->start.hour;
+    minute = element->finish.minutes - element->start.minutes;
+    while (hours != 0)
+    {
+        minute = minute + 60;
+        hours--;
+    }
+    return minute;
 }
