@@ -27,7 +27,7 @@
     <ClCompile Include="sortirovka.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="process.cpp">
+    <ClCompile Include="Process.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

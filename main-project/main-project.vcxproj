@@ -130,7 +130,7 @@
     <ClCompile Include="file_lecturer.cpp" />
     <ClCompile Include="filter.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="process.cpp" />
+    <ClCompile Include="Process.cpp" />
     <ClCompile Include="sortirovka.cpp" />
   </ItemGroup>
   <ItemGroup>
