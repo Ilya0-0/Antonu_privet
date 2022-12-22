@@ -27,6 +27,9 @@
     <ClCompile Include="sortirovka.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="process.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="data.txt">
@@ -47,6 +50,9 @@
       <Filter>Исходные файлы</Filter>
     </ClInclude>
     <ClInclude Include="sortirovka.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="processing.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>
