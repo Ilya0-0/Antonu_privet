@@ -38,7 +38,7 @@ namespace unittestproject
 			Confirence[0] = build_Confirence(10, 10, 13, 10); // 2 часа
 			Confirence[1] = build_Confirence(11, 10, 15, 10); // 4 часа
 			Confirence[2] = build_Confirence(13, 30, 16, 30); // 3 часа
-			Assert::AreEqual(4, process(Confirence, 3));
+			Assert::AreEqual(240, process(Confirence, 3));
 			delete_Confirence(Confirence, 3);
 		}
 
@@ -48,7 +48,7 @@ namespace unittestproject
 			Confirence[0] = build_Confirence(10, 10, 11, 10); // 1 час
 			Confirence[1] = build_Confirence(11, 10, 12, 10); // 1 час
 			Confirence[2] = build_Confirence(12, 30, 13, 30); // 1 час
-			Assert::AreEqual(1, process(Confirence, 3));
+			Assert::AreEqual(60, process(Confirence, 3));
 			delete_Confirence(Confirence, 3);
 		}
 
@@ -57,7 +57,7 @@ namespace unittestproject
 			Confirence_program* Confirence[2];
 			Confirence[0] = build_Confirence(00, 00, 12, 00); // 12 часов 
 			Confirence[1] = build_Confirence(12, 00, 23, 59); // 11 часов 59 минут
-			Assert::AreEqual(12, process(Confirence, 2));
+			Assert::AreEqual(720, process(Confirence, 2));
 			delete_Confirence(Confirence, 2);
 		}
 	};
