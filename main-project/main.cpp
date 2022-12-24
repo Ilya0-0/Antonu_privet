@@ -7,6 +7,7 @@ using namespace std;
 #include "file_lecturer.h"
 #include "constants.h"
 #include "filter.h"
+#include "processing.h"
 
 
 void output(Confirence_program* Confirence)
@@ -62,6 +63,7 @@ int main()
 		cout << "\nВыберите способ фильтрации или обработки данных:\n";
 		cout << "1)Вывод всех докладов Бутова Ильи Васильевича\n";
 		cout << "2)Вывести все доклады длительностью больше 15 минут\n";
+		cout << "3) Максимальное время доклада\n";
 		cout << "\nВведите номер выбранного пункта: ";
 		int item;
 		cin >> item;
@@ -76,6 +78,20 @@ int main()
 			check_function = check_Confirence_program_by_date; 
 			cout << "*****  Вывести все доклады длительностью больше 15 минут  *****\n\n";
 			break;
+		case 3:
+		{
+			int days = process(Confirence, size);
+			int hour = 0, minutes;
+			while (days > 60)
+			{
+				days = days - 60;
+				hour++;
+			}
+			minutes = days;
+			cout << "***** Максимальное время доклада *****\n\n";
+			cout << hour<<":"<< minutes << "\n\n";
+			break;
+		}
 		default:
 			throw "Некорректный номер пункта";
 		}
@@ -83,33 +99,6 @@ int main()
 		{
 			int new_size;
 			Confirence_program** filtered = filter(Confirence, size, check_function, new_size);
-			cout << "Выберите критерии:\n";
-			cout << "1)Пирамидальная сортировка по убыванию длительности доклада\n";
-			cout << "2)Сортировка слиянием по убыванию длительности доклада \n";
-			cout << "3)Пирамидальная сортировка по возрастанию фамилии автора доклада\n";
-			cout << "4)Сортировка слиянием по возрастанию фамилии автора доклада\n";
-			cout << "\nВведите номер выбранного пункта: ";
-			int sort;
-			cin >> sort;
-			switch (sort)
-			{
-			case 1:
-				heapSort(filtered, new_size);
-				break;
-			case 2:
-				merge(filtered, new_size);
-				break;
-			case 3:
-				heapSort_str(filtered, new_size);
-				title_sort(filtered, new_size);
-				break;
-			case 4:
-				merge_str(filtered, new_size);
-				title_sort(filtered, new_size);
-				break;
-			default:
-				throw "Некорректный номер пункта";
-			}
 			for (int i = 0; i < new_size; i++)
 			{
 				output(filtered[i]);
